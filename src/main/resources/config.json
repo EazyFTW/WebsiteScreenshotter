@@ -1,0 +1,15 @@
+{
+  "interval": 2,
+  "websites": [
+    {
+      "url": "https://api.corona.eazyftw.com/og",
+      "fileName": "og.png",
+      "width": 1200,
+      "height": 600
+    },
+    {
+      "url": "https://api.corona.eazyftw.com/og",
+      "fileName": "og_full.png"
+    }
+  ]
+}
