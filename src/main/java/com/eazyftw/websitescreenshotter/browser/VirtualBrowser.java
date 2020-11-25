@@ -1,10 +1,9 @@
 package com.eazyftw.websitescreenshotter.browser;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class VirtualBrowser {
 
@@ -14,12 +13,16 @@ public class VirtualBrowser {
         WebDriverManager.chromedriver().setup();
         System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 
-        this.browser = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--window-size=1920x1080");
+
+        this.browser = new ChromeDriver(options);
     }
 
     public void navigate(String url) {
-        this.browser.manage().window().setSize(new Dimension(1920, 1080));
-        this.browser.manage().window().setPosition(new Point(0, 0));
         browser.get(url);
     }
 
