@@ -17,6 +17,7 @@ public class WebsiteScreenshotter {
 
         int websitesAmount = Config.getInstance().getWebsites().size();
         int interval = Config.getInstance().getInterval();
+
         System.out.println("SUCCESS - Found " + websitesAmount + " website" + (websitesAmount == 1 ? "" : "s") + ".");
         if(interval <= 0) {
             System.out.println("SUCCESS - Now starting!");
@@ -27,7 +28,7 @@ public class WebsiteScreenshotter {
         start();
     }
 
-    private static void start() {
+    public static void start() {
         if(Config.getInstance().getInterval() <= 0) {
             new Screenshotter(Config.getInstance().getWebsites());
         } else {
@@ -44,6 +45,5 @@ public class WebsiteScreenshotter {
                 }
             }).start();
         }
-
     }
 }
