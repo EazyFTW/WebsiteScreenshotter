@@ -5,16 +5,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class VirtualBrowser extends Thread {
+public class VirtualBrowser {
 
     protected ChromeDriver browser;
 
     public VirtualBrowser() {
-        start();
-    }
-
-    @Override
-    public void run() {
         WebDriverManager.chromedriver().setup();
         System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 
@@ -33,6 +28,5 @@ public class VirtualBrowser extends Thread {
 
     public void close() {
         browser.quit();
-        stop();
     }
 }
