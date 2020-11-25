@@ -23,13 +23,13 @@ With this tool, you can create screenshots of one or more websites!
   "interval": 2,
   "websites": [
     {
-      "url": "https://api.corona.eazyftw.com/og",
+      "url": "https://api.corona.eazyftw.com/og_div",
       "fileName": "og.png",
       "width": 1200,
       "height": 600
     },
     {
-      "url": "https://api.corona.eazyftw.com/og",
+      "url": "https://api.corona.eazyftw.com/og_div",
       "fileName": "og_full.png"
     }
   ]
