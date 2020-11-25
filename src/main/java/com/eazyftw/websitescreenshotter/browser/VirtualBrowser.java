@@ -33,5 +33,6 @@ public class VirtualBrowser extends Thread {
 
     public void close() {
         browser.quit();
+        stop();
     }
 }
