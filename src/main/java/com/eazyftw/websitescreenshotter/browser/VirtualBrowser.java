@@ -14,9 +14,7 @@ public class VirtualBrowser {
         System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
         options.addArguments("--headless");
-        options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--window-size=1920x1080");
 
         this.browser = new ChromeDriver(options);
@@ -27,6 +25,6 @@ public class VirtualBrowser {
     }
 
     public void close() {
-        browser.close();
+        browser.quit();
     }
 }
